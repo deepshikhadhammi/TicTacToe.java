@@ -52,7 +52,15 @@ public class TicTacToe extends Canvas {
     //hint
     public static int[][] createBoard(int rows,int columns)
     {
-        return null;
+        int [][]array=new int[rows][columns];
+        for(int i=0;i<rows;i++)
+        {
+            for(int j=0;j<columns;j++)
+            {
+                array[i][j]=EMPTY;
+            }
+        }
+        return array;
     }
     public static int rowsln(int [][]board)
     {
