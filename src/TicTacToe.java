@@ -77,6 +77,7 @@ public class TicTacToe extends Canvas {
     }
     public static void play(int [][]board,int row,int column,int piece)
     {
+        board[row][column]=piece;
 
     }
     public static boolean full(int[][]board)
