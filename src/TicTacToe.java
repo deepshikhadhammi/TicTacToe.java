@@ -68,7 +68,8 @@ public class TicTacToe extends Canvas {
     }
     public static int columnsln(int [][]board)
     {
-        return 0;
+
+        return board[0].length;
     }
     public static boolean canPlay(int [][]board,int row,int column)
     {
