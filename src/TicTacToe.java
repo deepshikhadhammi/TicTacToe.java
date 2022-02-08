@@ -96,6 +96,13 @@ public class TicTacToe extends Canvas {
     }
     public static boolean winInRow(int[][]board,int row,int piece)
     {
+        for(int i=0;i<rowsln(board);i++)
+        {
+            if(board[row][i]==piece && board[row][i+1]==piece && board[row][i+1]==piece)
+            {
+                return true;
+            }
+        }
         return true;
     }
     public static boolean winInColumn(int[][]board,int column,int piece)
