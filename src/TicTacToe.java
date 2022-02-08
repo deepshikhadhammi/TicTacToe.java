@@ -98,7 +98,7 @@ public class TicTacToe extends Canvas {
     {
         for(int i=0;i<columnsln(board)-2;i++)
         {
-            if(board[row][i]==piece && board[row][i+1]==piece && board[row][i+1]==piece)
+            if(board[row][i]==piece && board[row][i+1]==piece && board[row][i+2]==piece)
             {
                 return true;
             }
