@@ -82,6 +82,16 @@ public class TicTacToe extends Canvas {
     }
     public static boolean full(int[][]board)
     {
+        for(int i=0;i<rowsln(board);i++)
+        {
+            for(int j=0;j<columnsln(board);j++)
+            {
+                if(board[i][j]==EMPTY)
+                {
+                    return false;
+                }
+            }
+        }
         return true;
     }
     public static boolean winInRow(int[][]board,int row,int piece)
