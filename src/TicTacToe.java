@@ -128,7 +128,7 @@ public class TicTacToe extends Canvas {
     }
     public static boolean winInDiagonalFS(int[][]board,int piece)
     {
-        for(int r=0,c=columnsln(board)-1;r<rowsln(board)-2&&c>=2;r++,c++)
+        for(int r=0,c=columnsln(board)-1;r<rowsln(board)-2&&c>=2;r++,c--)
         {
             if(board[r][c]==piece&&board[r+1][c-1]==piece && board[r+2][c-2]==piece)
             {
