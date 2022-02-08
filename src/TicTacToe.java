@@ -113,7 +113,7 @@ public class TicTacToe extends Canvas {
                 return true;
         }
 
-        return true;
+        return false;
     }
     public static boolean winInDiagonalBS(int[][]board,int piece)
     {return true;
