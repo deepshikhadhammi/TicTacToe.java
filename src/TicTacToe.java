@@ -107,6 +107,12 @@ public class TicTacToe extends Canvas {
     }
     public static boolean winInColumn(int[][]board,int column,int piece)
     {
+        for(int row=0;row<rowsln(board)-2;row++)
+        {
+            if(board[row][column]==piece && board[row+1][column]==piece && board[row+2][column]==piece)
+                return true;
+        }
+
         return true;
     }
     public static boolean winInDiagonalBS(int[][]board,int piece)
