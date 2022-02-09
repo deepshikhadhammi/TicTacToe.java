@@ -139,9 +139,36 @@ public class TicTacToe extends Canvas {
     }
     public static int[] hint(int [][]board,int piece)
     {
-        return null;
-
+        int []location=new int[2];
+        location[0]=-1;
+        location[1]=-1;
+        for(int i=0;i<rowsln(board);i++)
+        {
+            for(int j=0;j<columnsln(board);j++)
+            {
+                if (canPlay(board, i, j)) {
+                    play(board, i, j, piece);
+                    if (won(board, piece))
+                    {
+                        board[i][j]=EMPTY;
+                        location[0]=i;
+                        location[1]=j;
+                        return location;
+                    }
+                    else
+                    {
+                        board[i][j]=EMPTY;
+                    }
+                }
+            }
+        }
+        return location;
     }
+
+
+
+
+
 
     //The following are completed for you already
 
