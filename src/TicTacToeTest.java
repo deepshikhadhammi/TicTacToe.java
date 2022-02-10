@@ -54,7 +54,7 @@ class TicTacToeTest {
     void row_length_t1()
     {   int [][]b=new int[][]{{X,O,O},{O,X,O},{O,X,X}};
         int exp_res=3;
-        int result=TicTacToe.rowsln(b);
+        int result=TicTacToe.rowsIn(b);
         assertEquals(exp_res,result,"Row length is not 3");
     }
     @Test
@@ -62,7 +62,7 @@ class TicTacToeTest {
     {
         int [][]b=new int[][]{{X,O,O,X,O},{O,X,O,X,X},{O,X,X,O,O},{O,X,X,O,X}};
         int exp_res=4;
-        int result=TicTacToe.rowsln(b);
+        int result=TicTacToe.rowsIn(b);
         assertEquals(exp_res,result,"Row length is not 4");
 
     }
@@ -71,7 +71,7 @@ class TicTacToeTest {
     {
         int [][]b=new int[][]{{X,X,O,O},{X,O,O,X},{O,O,X,O},{O,X,O,X},{X,X,O,O}};
         int exp_res=5;
-        int result=TicTacToe.rowsln(b);
+        int result=TicTacToe.rowsIn(b);
         assertEquals(exp_res,result,"Row length is not 5");
 
     }
@@ -80,7 +80,7 @@ class TicTacToeTest {
     {
         int [][]b=new int[][]{{O,O,X},{X,X,O},{O,O,X},{O,X,O}};
         int exp_res=4;
-        int result=TicTacToe.rowsln(b);
+        int result=TicTacToe.rowsIn(b);
         assertEquals(exp_res,result,"Row length is not 4");
 
     }
@@ -89,7 +89,7 @@ class TicTacToeTest {
     {
         int [][]b=new int[][]{{X,X,O,O,X},{X,O,X,X,O},{O,O,X,O,O}};
         int exp_res=3;
-        int result=TicTacToe.rowsln(b);
+        int result=TicTacToe.rowsIn(b);
         assertEquals(exp_res,result,"Row length is not 3");
 
     }
@@ -98,7 +98,7 @@ class TicTacToeTest {
     {
         int [][]b=new int[][]{{X,X,O,O,X},{X,O,X,X,O},{O,O,X,O,O}};
         int exp_res=5;
-        int result=TicTacToe.columnsln(b);
+        int result=TicTacToe.columnsIn(b);
         assertEquals(exp_res,result,"Column length is not 5");
     }
     @Test
@@ -106,7 +106,7 @@ class TicTacToeTest {
     {
         int [][]b=new int[][]{{X,X,O,O},{X,O,O,X},{O,O,X,O},{O,X,O,X},{X,X,O,O}};
         int exp_res=4;
-        int result=TicTacToe.columnsln(b);
+        int result=TicTacToe.columnsIn(b);
         assertEquals(exp_res,result,"Column length is not 4");
 
     }
@@ -115,7 +115,7 @@ class TicTacToeTest {
     {
         int [][]b=new int[][]{{X,O,O},{O,X,X},{X,O,O},{O,X,X}};
         int exp_res=3;
-        int result=TicTacToe.columnsln(b);
+        int result=TicTacToe.columnsIn(b);
         assertEquals(exp_res,result,"Column length is not 3");
 
     }
@@ -123,14 +123,14 @@ class TicTacToeTest {
     void column_length_t4() {
         int[][] b = new int[][]{{O, O, X, O}, {X, X, O, X}, {O, X, O, X}};
         int exp_res = 4;
-        int result = TicTacToe.columnsln(b);
+        int result = TicTacToe.columnsIn(b);
         assertEquals(exp_res, result, "Column length is not 4");
     }
     @Test
     void column_length_t5() {
         int[][] b = new int[][]{{O, O, X, O, X}, {X, X, O, O, X}, {O, X, O, X, O}, {X, X, O, O, X}, {O, O, X, O, O}};
         int exp_res = 5;
-        int result = TicTacToe.columnsln(b);
+        int result = TicTacToe.columnsIn(b);
         assertEquals(exp_res, result, "Column length is not 5");
     }
     @Test
