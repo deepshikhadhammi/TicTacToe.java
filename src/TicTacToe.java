@@ -50,49 +50,90 @@ public class TicTacToe extends Canvas {
     //winInDiagonalBS
     //winInDigonalFS
     //hint
+
+    /**
+     *
+     * @param rows is the dimension of rows that a user needs on the board.
+     * @param columns is the dimension of columns that a user needs on the board.
+     * @return an empty board containing rows and columns. Every index contains the default value EMPTY=0
+     */
     public static int[][] createBoard(int rows,int columns)
     {
-        int [][]array=new int[rows][columns];
-        for(int i=0;i<rows;i++)
+        int [][]array=new int[rows][columns];   // create an array containing the number of rows and columns in the formal parameter
+        for(int i=0;i<rows;i++)   // parameter i to loop through every row in a board
         {
-            for(int j=0;j<columns;j++)
+            for(int j=0;j<columns;j++)  //parameter j to loop through every column
             {
-                array[i][j]=EMPTY;
+                array[i][j]=EMPTY;    // initialising every index on the board to default value EMPTY
             }
         }
-        return array;
+        return array;                 // return a 2D array containing rows and columns
     }
+
+    /**
+     * This function is used to find the length or the number of rows in a board.
+     * @param board is a 2D array containing rows and columns
+     * @return number of rows in a board
+     */
     public static int rowsIn(int [][]board)
     {
-        return board.length;
+        return board.length; //returns the integer input of number of rows in a board
     }
+
+    /**
+     * This function is used to find the length or the number of columns in a board.
+     * @param board is a 2D array containing rows and columns
+     * @return number of columns in a board
+     */
     public static int columnsIn(int [][]board)
     {
-
-        return board[0].length;
+        return board[0].length;  //returns the integer input of number of columns in a board
     }
+
+    /**
+     * This function is used to check whether the player can play at a particular index of row and column given by user.
+     * @param board is a 2D array containing rows and columns.
+     * @param row  is a particular location of row in a board that we need to check is empty or not so the user can play the piece.
+     * @param column is a particular location of column in a board that we need to check is empty or not so the user can play the piece.
+     * @return boolean true if the index of row and column is EMPTY otherwise false.
+     */
     public static boolean canPlay(int [][]board,int row,int column)
     {
-        return board[row][column] == EMPTY;
+        return board[row][column] == EMPTY;   // checks whether a specific row and column on the board is empty or not.
+                                             //If empty then true otherwise false.
     }
+
+    /**
+     * This function is used to assign a piece at a specific row and column entered by the user
+     * @param board is 2D array containing rows and columns.
+     * @param row is the particular location on the board where the piece needs to be assigned
+     * @param column is a particular column on the board where the piece needs to be assigned
+     * @param piece is value X==1 or O==2
+     */
     public static void play(int [][]board,int row,int column,int piece)
     {
-        board[row][column]=piece;
+        board[row][column]=piece;   // assign a piece on the board at a given index of row and column
 
     }
+
+    /**
+     * This function is used to check whether the board is full or not i.e every location is filled with pieces or not
+     * @param board is 2D array containing rows and columns
+     * @return boolean type true if there is no empty location on the board otherwise false if any location on the board is empty
+     */
     public static boolean full(int[][]board)
     {
-        for(int i=0;i<rowsIn(board);i++)
+        for(int i=0;i<rowsIn(board);i++)  // parameter i loops through every row on a 2D board
         {
-            for(int j=0;j<columnsIn(board);j++)
+            for(int j=0;j<columnsIn(board);j++)  //parameter j loops through every column on a board
             {
-                if(board[i][j]==EMPTY)
+                if(board[i][j]==EMPTY)  //checks if the particular row and column on a board is empty or not.
                 {
-                    return false;
+                    return false;    // return false if any location on the board is empty
                 }
             }
         }
-        return true;
+        return true;           //return true if no location is empty on the board.
     }
     public static boolean winInRow(int[][]board,int row,int piece)
     {
