@@ -172,54 +172,74 @@ public class TicTacToe extends Canvas {
 
         return false; //return false if there is no win in a column
     }
+
+    /**
+     * This function checks whether there is win in diagonal backwards.
+     * @param board is a 2D array containing rows and columns
+     * @param piece is either X==1 or O==2 which is required to check for 3 same consecutive pieces in a diagonal backwards.
+     * @return boolean true if there is a win in diagonal backwards otherwise false.
+     */
     public static boolean winInDiagonalBS(int[][]board,int piece)
     {
-        for(int r=0,c=0;r<rowsIn(board)-2&&c<columnsIn(board)-2;r++,c++)
+        for(int r=0,c=0;r<rowsIn(board)-2&&c<columnsIn(board)-2;r++,c++)  //parameter r is used to loop through every row on a board and parameter c is used to loop through every column on a board
         {
-         if(board[r][c]==piece && board [r+1][c+1]==piece && board[r+2][c+2]==piece)
+         if(board[r][c]==piece && board [r+1][c+1]==piece && board[r+2][c+2]==piece)  //checks if three consecutive pieces in a backward diagonal contain same pieces
          {
-             return true;
+             return true;   //returns true if there is a win in diagonal backwards
          }
         }
-        return false;
+        return false;   //returns false if there is no win in a diagonal backwards
     }
+
+    /**
+     * This function is used to check whether there is a win in a forward diagonal or not.
+     * @param board is a 2D array containing rows and columns.
+     * @param piece is required to check for three consecutive same pieces either X or O
+     * @return boolean true if there is win in diagonal forwards otherwise false.
+     */
+
     public static boolean winInDiagonalFS(int[][]board,int piece)
     {
-        for(int r=0,c=columnsIn(board)-1;r<rowsIn(board)-2&&c>=2;r++,c--)
+        for(int r=0,c=columnsIn(board)-1;r<rowsIn(board)-2&&c>=2;r++,c--) // parameter r is used to loop through every row and c is used to loop through every column
         {
-            if(board[r][c]==piece&&board[r+1][c-1]==piece && board[r+2][c-2]==piece)
+            if(board[r][c]==piece&&board[r+1][c-1]==piece && board[r+2][c-2]==piece)// check for three consecutive same pieces ina forward diagonal
             {
-                return true;
+                return true; //returns true if there is a win in diagonal
             }
         }
-        return false;
+        return false;  //returns false if there is no win in a diagonal
     }
+
+    /**
+     * This function gives player a hint to win or to stop opponents win.
+     * @param board is a 2D array containing rows and columns
+     * @param piece  is a either X or O which is to be placed on the board depending on the hint for the win
+     * @return returns the index of row and column where the last piece was placed if the player wins otherwise it returns default (-1,-1)
+     */
     public static int[] hint(int [][]board,int piece)
     {
-        int []location=new int[2];
-        location[0]=-1;
-        location[1]=-1;
-        for(int i=0;i<rowsIn(board);i++)
+        int []location=new int[]{1,-1}; //initialisation of array to store row and column index(default value stored -1,-1)
+        for(int i=0;i<rowsIn(board);i++) //parameter i to loop through rows on the board
         {
-            for(int j=0;j<columnsIn(board);j++)
+            for(int j=0;j<columnsIn(board);j++)  //parameter j to loop through columns on the board
             {
-                if (canPlay(board, i, j)) {
-                    play(board, i, j, piece);
-                    if (won(board, piece))
+                if (canPlay(board, i, j)) {     //function to check if the row index i and column index j is empty on the board
+                    play(board, i, j, piece);  // if row index i and col index j is empty then the player can play ,and it assigns a piece X or O to that index
+                    if (won(board, piece))     // if the player has won
                     {
-                        board[i][j]=EMPTY;
-                        location[0]=i;
-                        location[1]=j;
-                        return location;
+                        board[i][j]=EMPTY;     //remove piece from the location
+                        location[0]=i;        //store the row index of last played location
+                        location[1]=j;       // stores the column index of last played location
+                        return location;    // returns the last played location by the player
                     }
-                    else
+                    else                   // if the player has not won
                     {
-                        board[i][j]=EMPTY;
+                        board[i][j]=EMPTY;   // remove the piece from the location (row index i and column index j)
                     }
                 }
             }
         }
-        return location;
+        return location;    //return location that is the row index and column index
     }
 
 
