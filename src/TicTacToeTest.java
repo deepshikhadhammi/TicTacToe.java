@@ -216,5 +216,40 @@ class TicTacToeTest {
         int [][]b=new int[][]{{X,X,EMPTY,O,EMPTY},{O,O,EMPTY,X,O},{EMPTY,X,EMPTY,O,EMPTY},{O,EMPTY,X,EMPTY,X},{EMPTY,X,EMPTY,O}};
         TicTacToe.play(b,r,c,O);
     }
+    @Test
+    void full_t1()
+    {
+        int [][]b=new int[][]{{X,X,EMPTY,O,EMPTY},{O,O,EMPTY,X,O},{EMPTY,X,EMPTY,O,EMPTY},{O,EMPTY,X,EMPTY,X},{EMPTY,X,EMPTY,O}};
+        boolean result=TicTacToe.full(b);
+        assertFalse(result);
+    }
+    @Test
+    void full_t2()
+    {
+        int [][]b=new int[][]{{X,X,O,O},{X,O,O,X},{O,O,X,O},{O,X,O,X},{X,X,O,O}};
+        boolean result=TicTacToe.full(b);
+        assertTrue(result);
+    }
+    @Test
+    void full_t3()
+    {
+        int[][]b=new int[][]{{O, O, X, O}, {X, X, O, X}, {O, X, O, X}};
+        boolean result=TicTacToe.full(b);
+        assertTrue(result);
+    }
+    @Test
+    void full_t4()
+    {
+        int[][]b=new int[][]{{O, O, X,EMPTY, O}, {X, X, O,EMPTY, X}, {O,EMPTY, X, O, X},{X,O,O,X,EMPTY}};
+        boolean result=TicTacToe.full(b);
+        assertFalse(result);
+    }
+    @Test
+    void full_t5()
+    {
+        int[][]b=new int[][]{{O,O,X}, {X,X,O}, {O,X,O},{X,O,X},{X,X,O}};
+        boolean result=TicTacToe.full(b);
+        assertTrue(result);
+    }
 
 }
