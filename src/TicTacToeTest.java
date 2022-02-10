@@ -181,5 +181,40 @@ class TicTacToeTest {
         boolean result=TicTacToe.canPlay(b,r,c);
         assertTrue(result);
     }
+    @Test
+    void play_t1()
+    {
+        int r=1,c=2;
+        int [][]b=new int[][]{{X,X,EMPTY,O},{O,O,EMPTY,X},{EMPTY,X,EMPTY,EMPTY},{O,EMPTY,X,EMPTY}};
+        TicTacToe.play(b,r,c,O);
+    }
+    @Test
+    void play_t2()
+    {
+        int r=2,c=4;
+        int [][]b=new int[][]{{O,X,EMPTY,O,X},{EMPTY,O,X,EMPTY,EMPTY},{EMPTY,X,O,O,EMPTY},{X,EMPTY,X,EMPTY,O}};
+        TicTacToe.play(b,r,c,O);
+    }
+    @Test
+    void play_t3()
+    {
+        int r=1,c=1;
+        int [][]b=new int[][]{{X,O,X},{X,EMPTY,O},{O,X,O}};
+        TicTacToe.play(b,r,c,X);
+    }
+    @Test
+    void play_t4()
+    {
+        int r=3,c=3;
+        int [][]b=new int[][]{{O,EMPTY,X,X},{X,O,EMPTY,EMPTY},{O,X,X,O},{EMPTY,O,X,EMPTY}};
+        TicTacToe.play(b,r,c,O);
+    }
+    @Test
+    void play_t5()
+    {
+        int r=3,c=2;
+        int [][]b=new int[][]{{X,X,EMPTY,O,EMPTY},{O,O,EMPTY,X,O},{EMPTY,X,EMPTY,O,EMPTY},{O,EMPTY,X,EMPTY,X},{EMPTY,X,EMPTY,O}};
+        TicTacToe.play(b,r,c,O);
+    }
 
 }
