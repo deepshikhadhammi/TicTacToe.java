@@ -133,5 +133,53 @@ class TicTacToeTest {
         int result = TicTacToe.columnsln(b);
         assertEquals(exp_res, result, "Column length is not 5");
     }
+    @Test
+    void can_Play_t1()
+    {
+        int r=2, c=3;
+        int [][]b=new int[][]{{X,EMPTY,X,X},{EMPTY,O,X,O},{EMPTY,X,X,EMPTY}};
+        boolean result=TicTacToe.canPlay(b,r,c);
+        assertTrue(result);
+    }
+    @Test
+    void can_Play_t2()
+    {
+        int r=1, c=2;
+        int [][]b=new int[][]{{X,X,EMPTY,O},{O,O,EMPTY,X},{EMPTY,X,EMPTY,EMPTY},{O,EMPTY,X,EMPTY}};
+        boolean result=TicTacToe.canPlay(b,r,c);
+        assertTrue(result);
+    }
+    @Test
+    void can_Play_t3()
+    {
+        int r=3, c=3;
+        int [][]b=new int[][]{{X,EMPTY,X,X},{EMPTY,O,X,O},{EMPTY,X,X,EMPTY},{X,O,X,O}};
+        boolean result=TicTacToe.canPlay(b,r,c);
+        assertFalse(result);
+    }
+    @Test
+    void can_Play_t4()
+    {
+        int r=4, c=0;
+        int [][]b=new int[][]{{X,EMPTY,X,X,O},{EMPTY,O,X,O,X},{EMPTY,X,X,EMPTY,O},{X,O,O,X,EMPTY},{EMPTY,O,O,X}};
+        boolean result=TicTacToe.canPlay(b,r,c);
+        assertTrue(result);
+    }
+    @Test
+    void can_Play_t5()
+    {
+        int r=2, c=4;
+        int [][]b=new int[][]{{X,EMPTY,X,X,EMPTY},{EMPTY,O,X,O,O},{EMPTY,X,X,EMPTY,X}};
+        boolean result=TicTacToe.canPlay(b,r,c);
+        assertFalse(result);
+    }
+    @Test
+    void can_Play_t6()
+    {
+        int r=0, c=1;
+        int [][]b=new int[][]{{X,EMPTY,X,X},{EMPTY,O,X,O},{EMPTY,X,X,EMPTY}};
+        boolean result=TicTacToe.canPlay(b,r,c);
+        assertTrue(result);
+    }
 
 }
