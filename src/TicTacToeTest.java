@@ -366,6 +366,55 @@ class TicTacToeTest {
         boolean result = TicTacToe.winInDiagonalBS(b, X);
         assertTrue(result);
     }
+    @Test
+    void winDiagonal_FS_t1()
+    {
+        int[][] b = new int[][]{{X,O,O},{O,O,X},{O,X,X}};
+        boolean result = TicTacToe.winInDiagonalFS(b, O);
+        assertTrue(result);
+    }
+    @Test
+    void winDiagonal_FS_t2()
+    {
+        int[][] b = new int[][]{{X,O,X,O},{O,O,X,X},{X,X,O,O},{X,O,X,X}};
+        boolean result = TicTacToe.winInDiagonalFS(b, X);
+        assertTrue(result);
+    }
+    @Test
+    void winDiagonal_FS_t3()
+    {
+        int[][] b = new int[][]{{O,EMPTY,X,EMPTY,EMPTY},{EMPTY,X,X,O,O},{EMPTY,EMPTY,O,EMPTY,O},{EMPTY,O,O,X,X},{X,EMPTY,EMPTY,O,X}};
+        boolean result = TicTacToe.winInDiagonalFS(b, O);
+        assertTrue(result);
+    }
+    @Test
+    void winDiagonal_FS_t4()
+    {
+        int[][] b = new int[][]{{X,O,O,X},{X,EMPTY,X,EMPTY},{O,X,EMPTY,O},{O,EMPTY,X,EMPTY}};
+        boolean result = TicTacToe.winInDiagonalFS(b, X);
+        assertTrue(result);
+    }
+    @Test
+    void winDiagonal_FS_t5()
+    {
+        int[][] b = new int[][]{{X,EMPTY,O},{X,O,EMPTY},{O,O,X}};
+        boolean result = TicTacToe.winInDiagonalFS(b, O);
+        assertTrue(result);
+    }
+    @Test
+    void winDiagonal_FS_t6()
+    {
+        int[][] b = new int[][]{{X,O,X,O},{O,X,O,X},{O,X,X,O}};
+        boolean result = TicTacToe.winInDiagonalFS(b, O);
+        assertFalse(result);
+    }
+    @Test
+    void winDiagonal_FS_t7()
+    {
+        int[][] b = new int[][]{{O,X,EMPTY,O,X},{EMPTY,O,X,EMPTY,EMPTY},{EMPTY,X,O,O,EMPTY},{X,EMPTY,X,EMPTY,O}};
+        boolean result = TicTacToe.winInDiagonalFS(b, O);
+        assertFalse(result);
+    }
 
 
 }
