@@ -181,14 +181,21 @@ public class TicTacToe extends Canvas {
      */
     public static boolean winInDiagonalBS(int[][]board,int piece)
     {
-        for(int r=0,c=0;r<rowsIn(board)-2&&c<columnsIn(board)-2;r++,c++)  //parameter r is used to loop through every row on a board and parameter c is used to loop through every column on a board
+        for(int r =0;r<rowsIn(board);r++)
         {
-         if(board[r][c]==piece && board [r+1][c+1]==piece && board[r+2][c+2]==piece)  //checks if three consecutive pieces in a backward diagonal contain same pieces
-         {
-             return true;   //returns true if there is a win in diagonal backwards
-         }
+            for(int c=0;c<columnsIn(board);c++)
+            {
+                if((r+2)<rowsIn(board)&& (c+2)<columnsIn(board))
+                {
+                    if(board[r][c]==piece &&board[r+1][c+1]==piece && board[r+2][c+2]==piece)
+                    {
+                        return true;
+                    }
+                }
+
+            }
         }
-        return false;   //returns false if there is no win in a diagonal backwards
+        return false;
     }
 
     /**
@@ -200,14 +207,22 @@ public class TicTacToe extends Canvas {
 
     public static boolean winInDiagonalFS(int[][]board,int piece)
     {
-        for(int r=0,c=columnsIn(board)-1;r<rowsIn(board)-2&&c>=2;r++,c--) // parameter r is used to loop through every row and c is used to loop through every column
+        for(int r=0;r<rowsIn(board);r++)
         {
-            if(board[r][c]==piece&&board[r+1][c-1]==piece && board[r+2][c-2]==piece)// check for three consecutive same pieces ina forward diagonal
+            for (int c = columnsIn(board) - 1; c >= 0; c--) // parameter r is used to loop through every row and c is used to loop through every column
             {
-                return true; //returns true if there is a win in diagonal
+                if ((r + 2) < rowsIn(board) && (c - 2) >= 0 && (c - 2) < columnsIn(board)) {
+
+
+                    if (board[r][c] == piece && board[r + 1][c - 1] == piece && board[r + 2][c - 2] == piece)// check for three consecutive same pieces ina forward diagonal
+                    {
+                        return true; //returns true if there is a win in diagonal
+                    }
+                }
             }
         }
-        return false;  //returns false if there is no win in a diagonal
+        return false;
+
     }
 
     /**
