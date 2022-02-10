@@ -135,26 +135,42 @@ public class TicTacToe extends Canvas {
         }
         return true;           //return true if no location is empty on the board.
     }
+
+    /**
+     * This function checks whether there is a win in row or not by comparing the pieces on three consecutive locations.
+     * @param board is a 2D array containing rows and columns
+     * @param row  is a particular row in which we need to check that the player has won or not.
+     * @param piece is either X==1 or O==2
+     * @return true if the player has won in a row otherwise false.
+     */
     public static boolean winInRow(int[][]board,int row,int piece)
     {
-        for(int i=0;i<columnsIn(board)-2;i++)
+        for(int col=0;col<columnsIn(board)-2;col++)    //loop for every column in a particular row given by user
         {
-            if(board[row][i]==piece && board[row][i+1]==piece && board[row][i+2]==piece)
+            if(board[row][col]==piece && board[row][col+1]==piece && board[row][col+2]==piece)  // checks if there are three consecutive same pieces in a row
             {
-                return true;
+                return true; //return true if the row has same three pieces continuously.
             }
         }
-        return false;
+        return false; //return false  if there is no win in a row
     }
+
+    /**
+     * This function checks whether the player has won in a column or not by comparing three consecutive pieces in a column.
+     * @param board is  a 2D array containing rows and columns.
+     * @param column is a particular index of column given by the user in which we need to check whether the user has won or not
+     * @param piece is either X==1 or O==2
+     * @return true if the column contains three consecutive same pieces either X or O
+     */
     public static boolean winInColumn(int[][]board,int column,int piece)
     {
-        for(int row=0;row<rowsIn(board)-2;row++)
+        for(int row=0;row<rowsIn(board)-2;row++) //loop through every row in a particular column. For win in a column only the row value changes column remains same.
         {
-            if(board[row][column]==piece && board[row+1][column]==piece && board[row+2][column]==piece)
-                return true;
+            if(board[row][column]==piece && board[row+1][column]==piece && board[row+2][column]==piece) // check for three consecutive same pieces in a column
+                return true;  // if there is a win in a column it will return true as there will be 3 same pieces consecutively in a column.
         }
 
-        return false;
+        return false; //return false if there is no win in a column
     }
     public static boolean winInDiagonalBS(int[][]board,int piece)
     {
