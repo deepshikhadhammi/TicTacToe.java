@@ -415,6 +415,69 @@ class TicTacToeTest {
         boolean result = TicTacToe.winInDiagonalFS(b, O);
         assertFalse(result);
     }
+    @Test
+    void hint_t1()
+    {
+        int[][] b = new int[][]{{O,X,O},{X,O,X},{EMPTY,X,X}};
+        int [] exp_res=new int[]{2,0};
+        int []result = TicTacToe.hint(b, X);
+        assertArrayEquals(exp_res,result,"Hint should be (2,0)");
+
+    }
+    @Test
+    void hint_t2()
+    {
+        int[][] b = new int[][]{{O,X,O,EMPTY},{X,EMPTY,X,O},{O,X,O,EMPTY},{O,X,EMPTY,X}};
+        int [] exp_res=new int[]{1,1};
+        int []result = TicTacToe.hint(b, O);
+        assertArrayEquals(exp_res,result,"Hint should be (1,1)");
+
+    }
+    @Test
+    void hint_t3()
+    {
+        int[][] b = new int[][]{{O,EMPTY,X,X},{X,O,O,EMPTY},{O,X,X,O},{EMPTY,O,EMPTY,X}};
+        int [] exp_res=new int[]{1,3};
+        int []result = TicTacToe.hint(b, O);
+        assertArrayEquals(exp_res,result,"Hint should be (1,3)");
+
+    }
+    @Test
+    void hint_t4()
+    {
+        int[][] b = new int[][]{{X,EMPTY,EMPTY,EMPTY,O},{EMPTY,EMPTY,X,X,EMPTY},{EMPTY,X,O,O,X},{EMPTY,EMPTY,O,EMPTY,EMPTY},{O,EMPTY,X,EMPTY,O}};
+        int [] exp_res=new int[]{3,1};
+        int []result = TicTacToe.hint(b, O);
+        assertArrayEquals(exp_res,result,"Hint should be (3,1)");
+
+    }
+    @Test
+    void hint_t5()
+    {
+        int[][] b = new int[][]{{O,EMPTY,O},{O,X,X},{X,EMPTY,O},{O,X,X}};
+        int [] exp_res=new int[]{2,1};
+        int []result = TicTacToe.hint(b, X);
+        assertArrayEquals(exp_res,result,"Hint should be (2,1)");
+
+    }
+    @Test
+    void hint_t6()
+    {
+        int[][] b = new int[][]{{X,O,X},{X,X,O},{O,X,O}};
+        int [] exp_res=new int[]{-1,-1};
+        int []result = TicTacToe.hint(b, X);
+        assertArrayEquals(exp_res,result,"Hint should be (-1,-1)");
+
+    }
+    @Test
+    void hint_t7()
+    {
+        int[][] b = new int[][]{{O,X,O,X},{X,O,X,O},{EMPTY,X,X,EMPTY}};
+        int [] exp_res=new int[]{-1,-1};
+        int []result = TicTacToe.hint(b, O);
+        assertArrayEquals(exp_res,result,"Hint should be (-1,-1)");
+
+    }
 
 
 }
