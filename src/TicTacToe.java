@@ -218,7 +218,7 @@ public class TicTacToe extends Canvas {
      */
     public static int[] hint(int [][]board,int piece)
     {
-        int []location=new int[]{1,-1}; //initialisation of array to store row and column index(default value stored -1,-1)
+        int []location=new int[]{-1,-1}; //initialisation of array to store row and column index(default value stored -1,-1)
         for(int i=0;i<rowsIn(board);i++) //parameter i to loop through rows on the board
         {
             for(int j=0;j<columnsIn(board);j++)  //parameter j to loop through columns on the board
