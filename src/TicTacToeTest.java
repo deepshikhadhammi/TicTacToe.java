@@ -251,5 +251,45 @@ class TicTacToeTest {
         boolean result=TicTacToe.full(b);
         assertTrue(result);
     }
+    @Test
+    void winRow_t1()
+    {
+        int r=0 ;
+        int [][]b=new int[][]{{X,X,X,O}, {X,O,O,X}, {O,X,X,O}};
+        boolean result=TicTacToe.winInRow(b,r,X);
+        assertTrue(result);
+    }
+    @Test
+    void winRow_t2()
+    {
+        int r=2 ;
+        int [][]b=new int[][]{{X,O,O,X,O}, {O,X,X,EMPTY,EMPTY}, {X,O,O,O,X},{O,X,X,O,X}};
+        boolean result=TicTacToe.winInRow(b,r,O);
+        assertTrue(result);
+    }
+    @Test
+    void winRow_t3()
+    {
+        int r=4 ;
+        int [][]b=new int[][]{{X,O,X,O,O}, {O,X,X,O,O}, {X,O,O,X,X},{O,O,X,O,O},{EMPTY,O,X,X,X}};
+        boolean result=TicTacToe.winInRow(b,r,X);
+        assertTrue(result);
+    }
+    @Test
+    void winRow_t4()
+    {
+        int r=2 ;
+        int [][]b=new int[][]{{X,X,O,X,O},{O,X,X,O,X},{X,O,O,O,X}};
+        boolean result=TicTacToe.winInRow(b,r,O);
+        assertTrue(result);
+    }
+    @Test
+    void winRow_t5()
+    {
+        int r=1 ;
+        int [][]b=new int[][]{{O,X,O,O},{X,X,X,O},{X,O,O,X},{O,X,X,O}};
+        boolean result=TicTacToe.winInRow(b,r,X);
+        assertTrue(result);
+    }
 
 }
