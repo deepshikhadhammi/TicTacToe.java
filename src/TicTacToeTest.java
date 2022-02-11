@@ -437,18 +437,18 @@ class TicTacToeTest {
     void hint_t3()
     {
         int[][] b = new int[][]{{O,EMPTY,X,X},{X,O,O,EMPTY},{O,X,X,O},{EMPTY,O,EMPTY,X}};
-        int [] exp_res=new int[]{1,3};
+        int [] exp_res=new int[]{0,1};
         int []result = TicTacToe.hint(b, O);
-        assertArrayEquals(exp_res,result,"Hint should be (1,3)");
+        assertArrayEquals(exp_res,result,"Hint should be (0,1)");
 
     }
     @Test
     void hint_t4()
     {
-        int[][] b = new int[][]{{X,EMPTY,EMPTY,EMPTY,O},{EMPTY,EMPTY,X,X,EMPTY},{EMPTY,X,O,O,X},{EMPTY,EMPTY,O,EMPTY,EMPTY},{O,EMPTY,X,EMPTY,O}};
-        int [] exp_res=new int[]{3,1};
+        int[][] b = new int[][]{{X,EMPTY,EMPTY,EMPTY,O},{EMPTY,O,X,X,EMPTY},{EMPTY,X,O,O,X},{EMPTY,EMPTY,O,EMPTY,EMPTY},{O,EMPTY,X,EMPTY,O}};
+        int [] exp_res=new int[]{1,4};
         int []result = TicTacToe.hint(b, O);
-        assertArrayEquals(exp_res,result,"Hint should be (3,1)");
+        assertArrayEquals(exp_res,result,"Hint should be (1,4)");
 
     }
     @Test
@@ -473,9 +473,9 @@ class TicTacToeTest {
     void hint_t7()
     {
         int[][] b = new int[][]{{O,X,O,X},{X,O,X,O},{EMPTY,X,X,EMPTY}};
-        int [] exp_res=new int[]{-1,-1};
+        int [] exp_res=new int[]{2,0};
         int []result = TicTacToe.hint(b, O);
-        assertArrayEquals(exp_res,result,"Hint should be (-1,-1)");
+        assertArrayEquals(exp_res,result,"Hint should be (2,0)");
 
     }
 
