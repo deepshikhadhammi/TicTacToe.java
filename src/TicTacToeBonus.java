@@ -148,27 +148,34 @@ public class TicTacToeBonus extends Canvas {
     {
         for (int i = 0; i < board[0].length-2; i++)  //loop that goes through every column in a row
         {
-            if (board[row][i] == piece && board[row][i + 1] == piece && board[row][i + 2] == piece) //check for three consecutive same pieces
-            {
-                int start=i;  //stores starting location
-                int end = (i + 2);  //stores ending location
-                int prev=row-1;  //variable to store value of a previous row
-                int next=row+1;  //variable to store value of next row
-                if (next < rowsIn(board)) {
-                    if (board[next][start] == piece ||board[next][end]==piece)  //check if perpendicular piece is same as other three
-                        return true;  //return true if same piece found
-                }
-                if (prev >= 0 ) {
-                    if (board[prev][start] == piece ||board[prev][end]==piece)  //checks if perpendicular piece is same as other three
-                    {
-                        return true;  //return true if win in a row
+            if (rowsIn(board) == 4 || rowsIn(board) == 5 || columnsIn(board) == 4 || columnsIn(board) == 5) {
+                if (board[row][i] == piece && board[row][i + 1] == piece && board[row][i + 2] == piece) //check for three consecutive same pieces
+                {
+                    int start = i;  //stores starting location
+                    int end = (i + 2);  //stores ending location
+                    int prev = row - 1;  //variable to store value of a previous row
+                    int next = row + 1;  //variable to store value of next row
+                    if (next < rowsIn(board)) {
+                        if (board[next][start] == piece || board[next][end] == piece)  //check if perpendicular piece is same as other three
+                            return true;  //return true if same piece found
                     }
+                    if (prev >= 0) {
+                        if (board[prev][start] == piece || board[prev][end] == piece)  //checks if perpendicular piece is same as other three
+                        {
+                            return true;  //return true if win in a row
+                        }
+                    }
+
+                }
+
+            } else {
+                if (board[row][i] == piece && board[row][i + 1] == piece && board[row][i + 2] == piece) //check for three consecutive same pieces
+                {
+                    return true;
                 }
 
             }
-
         }
-
         return false;  //return false if no win is found
     }
     /**
@@ -184,30 +191,37 @@ public class TicTacToeBonus extends Canvas {
         int start=0,end=0;  //initialising start and end with 0
         for (int i = 0; i < board.length-2; i++)  //loop that goes through every row in a particular column
         {
-            if (board[i][column] == piece&&board[i + 1][column]==piece &&  board[i + 2][column] ==piece) // check for three same consecutive pieces
-            {
-                start=i;    //stores starting location
-                end=i+2;    // stores ending location
-                int prev= column-1;  //stores the value of a previous column
-                int next=column+1;  //stores the value of next column in a row
-                if(next<columnsIn(board))   //checks if next column is less than the column length
+            if(rowsIn(board)==4||rowsIn(board)==5|| columnsIn(board)==4 ||columnsIn(board)==5) {
+                if (board[i][column] == piece && board[i + 1][column] == piece && board[i + 2][column] == piece) // check for three same consecutive pieces
                 {
-                    if((board[start][next]==piece) || (board[end][next]==piece))   //checks for the perpendicular piece at start and end
+                    start = i;    //stores starting location
+                    end = i + 2;    // stores ending location
+                    int prev = column - 1;  //stores the value of a previous column
+                    int next = column + 1;  //stores the value of next column in a row
+                    if (next < columnsIn(board))   //checks if next column is less than the column length
                     {
-                        return true;   //if piece is same as the other three then true
+                        if ((board[start][next] == piece) || (board[end][next] == piece))   //checks for the perpendicular piece at start and end
+                        {
+                            return true;   //if piece is same as the other three then true
 
+                        }
                     }
-                }
-                if(prev>=0)  //if previous column is not less than 0
-                {
-                    if(board[start][prev]==piece || board[end][prev]==piece)    //checks for perpendicular piece at start and end
+                    if (prev >= 0)  //if previous column is not less than 0
                     {
-                        return true;   //returns true if the perpendicular piece is same as other three
+                        if (board[start][prev] == piece || board[end][prev] == piece)    //checks for perpendicular piece at start and end
+                        {
+                            return true;   //returns true if the perpendicular piece is same as other three
+                        }
                     }
+
+
                 }
-
-
             }
+            else
+               {
+                   if (board[i][column] == piece&&board[i + 1][column]==piece &&  board[i + 2][column] ==piece)
+                       return true;
+               }
         }
         return false;  // return false if there is no win in a column
 
@@ -228,51 +242,57 @@ public class TicTacToeBonus extends Canvas {
             {
                 if((r+2)<rowsIn(board)&& (c+2)<columnsIn(board))  //check if row value and column value is within the range
                 {
-                    if(board[r][c]==piece &&board[r+1][c+1]==piece && board[r+2][c+2]==piece)// if three same consecutive pieces
-                    {
-                        int[] start = new int[]{r, c};  //stores the starting location
-                        int[] end = new int[]{r + 2, c+ 2};  //stores ending location
-                        //variables to find win in previous rows and columns or in next rows and columns
-                        int a = start[0] - 1;
-                        int b = start[1] + 1;
-                        int i = start[0]+1;
-                        int j=start[1]-1;
-                        int p = end[0] - 1;
-                        int q = end[1] + 1;
-                        int x=end[0]+1;
-                        int y=start[1]-1;
-                        if ((a >= 0 && a < rowsIn(board) && b >= 0 && b < columnsIn(board)) )
-                        {
-                            if (board[a][b] == piece )   //returns true if perpendicular piece is same as other three
-                            {
-                                return true;
-                            }
-                        }
-                        if(i>=0 && i<rowsIn(board) && j>=0 && j<columnsIn(board))
-                        {
-                            if (board[i][j]==piece)   //returns true if perpendicular piece is same as other three
-                            {
-                                return true;
-                            }
-                        }
-                        if((p>=0 &&p<rowsIn(board) &&q >=0 && q<columnsIn(board)))   //returns true if perpendicular piece is same as other three
-                        {
-                            if(board[p][q]==piece)
-                            {
-                                return true;
-                            }
-                        }
+                    if (rowsIn(board) == 4 || rowsIn(board) == 5 || columnsIn(board) == 4 || columnsIn(board) == 5) {
 
-                        if(x>=0 && x<rowsIn(board)&& y>=0 && y<columnsIn(board))  //returns true if perpendicular piece is same as other three
+                        if (board[r][c] == piece && board[r + 1][c + 1] == piece && board[r + 2][c + 2] == piece)// if three same consecutive pieces
                         {
-                            if( board[x][y]==piece)
-                            {
-                                return true;
+                            int[] start = new int[]{r, c};  //stores the starting location
+                            int[] end = new int[]{r + 2, c + 2};  //stores ending location
+                            //variables to find win in previous rows and columns or in next rows and columns
+                            int a = start[0] - 1;
+                            int b = start[1] + 1;
+                            int i = start[0] + 1;
+                            int j = start[1] - 1;
+                            int p = end[0] - 1;
+                            int q = end[1] + 1;
+                            int x = end[0] + 1;
+                            int y = start[1] - 1;
+                            if ((a >= 0 && a < rowsIn(board) && b >= 0 && b < columnsIn(board))) {
+                                if (board[a][b] == piece)   //returns true if perpendicular piece is same as other three
+                                {
+                                    return true;
+                                }
                             }
+                            if (i >= 0 && i < rowsIn(board) && j >= 0 && j < columnsIn(board)) {
+                                if (board[i][j] == piece)   //returns true if perpendicular piece is same as other three
+                                {
+                                    return true;
+                                }
+                            }
+                            if ((p >= 0 && p < rowsIn(board) && q >= 0 && q < columnsIn(board)))   //returns true if perpendicular piece is same as other three
+                            {
+                                if (board[p][q] == piece) {
+                                    return true;
+                                }
+                            }
+
+                            if (x >= 0 && x < rowsIn(board) && y >= 0 && y < columnsIn(board))  //returns true if perpendicular piece is same as other three
+                            {
+                                if (board[x][y] == piece) {
+                                    return true;
+                                }
+                            }
+
                         }
+                    }
+                    else
+                     {
+
+                        if(board[r][c]==piece &&board[r+1][c+1]==piece && board[r+2][c+2]==piece)// if three same consecutive pieces
+                            return true;
+                    }
 
                     }
-                }
 
             }
         }
@@ -294,53 +314,59 @@ public class TicTacToeBonus extends Canvas {
             for (int c = columnsIn(board) - 1; c >= 0; c--) // loop through every column in a row
             {
                 if ((r + 2) < rowsIn(board) && (c - 2) >= 0 && (c - 2) < columnsIn(board)) {
-
-
-                    if (board[r][c] == piece && board[r + 1][c - 1] == piece && board[r + 2][c - 2] == piece)// check for three consecutive same pieces ina forward diagonal
+                    if (rowsIn(board) == 4 || rowsIn(board) == 5 || columnsIn(board) == 4 || columnsIn(board) == 5)
                     {
-                        int[] start = new int[]{r, c};  //stores starting location
-                        int[] end = new int[]{r + 2, c- 2};  //stores ending location
-                        //variable sto store values of previous rows or columns and next rows or columns(perpendicular)
-                        int a = start[0] - 1;
-                        int b = start[1] - 1;
-                        int p = start[0] + 1;
-                        int q = start[1] + 1;
-                        int w=end[0]-1;
-                        int x=end[1]-1;
-                        int y=end[0]+1;
-                        int z=end[1]+1;
-                        if ((a >= 0 && a < rowsIn(board) && b >= 0 && b < columnsIn(board)))  //Left Side
+                        if (board[r][c] == piece && board[r + 1][c - 1] == piece && board[r + 2][c - 2] == piece)// check for three consecutive same pieces ina forward diagonal
                         {
-                            if (board[a][b] == piece )  //returns true if perpendicular piece is same as other three
+                            int[] start = new int[]{r, c};  //stores starting location
+                            int[] end = new int[]{r + 2, c- 2};  //stores ending location
+                            //variable sto store values of previous rows or columns and next rows or columns(perpendicular)
+                            int a = start[0] - 1;
+                            int b = start[1] - 1;
+                            int p = start[0] + 1;
+                            int q = start[1] + 1;
+                            int w=end[0]-1;
+                            int x=end[1]-1;
+                            int y=end[0]+1;
+                            int z=end[1]+1;
+                            if ((a >= 0 && a < rowsIn(board) && b >= 0 && b < columnsIn(board)))  //Left Side
                             {
-                                return true;
+                                if (board[a][b] == piece )  //returns true if perpendicular piece is same as other three
+                                {
+                                    return true;
+                                }
                             }
-                        }
-                        if((w>=0 &&w<rowsIn(board) &&x>=0 && x<columnsIn(board)))  //returns true if perpendicular piece is same as other three
-                        {
-                            if(board[w][x]==piece)
+                            if((w>=0 &&w<rowsIn(board) &&x>=0 && x<columnsIn(board)))  //returns true if perpendicular piece is same as other three
                             {
-                                return true;
+                                if(board[w][x]==piece)
+                                {
+                                    return true;
+                                }
                             }
-                        }
-                        if(y>=0 &&y<rowsIn(board) && z>=0 && z<columnsIn(board)) //returns true if perpendicular piece is same as other three
-                        {
-                            if(board[y][z]==piece)
+                            if(y>=0 &&y<rowsIn(board) && z>=0 && z<columnsIn(board)) //returns true if perpendicular piece is same as other three
                             {
-                                return true;
+                                if(board[y][z]==piece)
+                                {
+                                    return true;
+                                }
                             }
-                        }
 
 
-                        if(p>=0 && p<rowsIn(board)&& q>=0 && q<columnsIn(board)) //returns true if perpendicular piece is same as other three
-                        {
-                            if( board[p][q]==piece)
+                            if(p>=0 && p<rowsIn(board)&& q>=0 && q<columnsIn(board)) //returns true if perpendicular piece is same as other three
                             {
-                                return true;
+                                if( board[p][q]==piece)
+                                {
+                                    return true;
+                                }
                             }
+
+
                         }
-
-
+                    }
+                    else
+                    {
+                        if (board[r][c] == piece && board[r + 1][c - 1] == piece && board[r + 2][c - 2] == piece)
+                            return true;
                     }
                 }
             }
