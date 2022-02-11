@@ -328,30 +328,30 @@ class TicTacToeBonusTest {
     @Test
     void winDiagonal_BS_t1()
     {
-        int[][]b=new int[][]{{X,O,X,O},{X,X,O,X},{O,O,X,X},{X,O,X,O}};
-        boolean result=TicTacToeBonus.winInDiagonalBS(b,X);
+        int[][]b=new int[][]{{X,O,X,O},{X,X,O,X},{O,O,X,X},{X,O,X,O}};//2D array to check if there is a win in diagonal backwards
+        boolean result=TicTacToeBonus.winInDiagonalBS(b,X); // stores the actual result returned by winInDiagonal_BS
         assertTrue(result);
     }
     @Test
     void winDiagonal_BS_t2()
     {
-        int[][]b=new int[][]{{X,O,X,O},{X,X,O,X},{O,O,X,X},{X,O,X,O}};
-        boolean result=TicTacToeBonus.winInDiagonalBS(b,X);
+        int[][]b=new int[][]{{X,O,X,O},{X,X,O,X},{O,O,X,X},{X,O,X,O}};//2D array to check if there is a win in diagonal backwards
+        boolean result=TicTacToeBonus.winInDiagonalBS(b,X); // stores the actual result returned by winInDiagonal_BS
         assertTrue(result); //compares the actual result
     }
     @Test
     void winDiagonal_BS_t3()
     {
-        int[][]b=new int[][]{{X,O,O,X},{O,O,X,X},{X,X,O,O},{O,EMPTY,EMPTY,O},{X,O,X,X}};
-        boolean result=TicTacToeBonus.winInDiagonalBS(b,O);
+        int[][]b=new int[][]{{X,O,O,X},{O,O,X,X},{X,X,O,O},{O,EMPTY,EMPTY,O},{X,O,X,X}}; //2D array to check if there is a win in diagonal backwards
+        boolean result=TicTacToeBonus.winInDiagonalBS(b,O); // stores the actual result returned by winInDiagonal_BS
         assertTrue(result); //compares the actual result
 
     }
     @Test
     void winDiagonal_BS_t4()
     {
-        int[][]b=new int[][]{{EMPTY,X,EMPTY,O},{O,X,EMPTY,X},{X,O,X,O},{EMPTY,O,EMPTY,X},{O,X,O,EMPTY}};
-        boolean result=TicTacToeBonus.winInDiagonalBS(b,X);
+        int[][]b=new int[][]{{EMPTY,X,EMPTY,O},{O,X,EMPTY,X},{X,O,X,O},{EMPTY,O,EMPTY,X},{O,X,O,EMPTY}};//2D array to check if there is a win in diagonal backwards
+        boolean result=TicTacToeBonus.winInDiagonalBS(b,X); // stores the actual result returned by winInDiagonal_BS
         assertTrue(result); //compares the actual result
 
 
@@ -360,37 +360,37 @@ class TicTacToeBonusTest {
     @Test
     void winDiagonal_FS_t1()
     {
-        int[][]b=new int[][]{{O,EMPTY,O,X},{X,O,X,EMPTY},{O,X,X,O},{O,O,EMPTY,X}};
-        boolean result=TicTacToeBonus.winInDiagonalFS(b,X);
+        int[][]b=new int[][]{{O,EMPTY,O,X},{X,O,X,EMPTY},{O,X,X,O},{O,O,EMPTY,X}};//2D array to check if there is a win in diagonal forward
+        boolean result=TicTacToeBonus.winInDiagonalFS(b,X); // stores the actual result returned by winInDiagonal_FS
         assertTrue(result); //compares the actual result
     }
     @Test
     void winDiagonal_FS_t2()
     {
-        int[][]b=new int[][]{{X,X,O,O}, {O,O,X,EMPTY},{EMPTY,X,O,EMPTY},{X,EMPTY,X,EMPTY},{EMPTY,X,O,O}};
-        boolean result=TicTacToeBonus.winInDiagonalFS(b,X);
+        int[][]b=new int[][]{{X,X,O,O}, {O,O,X,EMPTY},{EMPTY,X,O,EMPTY},{X,EMPTY,X,EMPTY},{EMPTY,X,O,O}};//2D array to check if there is a win in diagonal forward
+        boolean result=TicTacToeBonus.winInDiagonalFS(b,X);// stores the actual result returned by winInDiagonal_FS
         assertTrue(result); //compares the actual result
 
     }
     @Test
     void winDiagonal_FS_t3()
     {
-        int[][]b=new int[][]{{O,X,O,X,O},{EMPTY,X,O,X,EMPTY},{EMPTY,O,X,O,EMPTY},{EMPTY,X,O,O,X},{EMPTY,EMPTY,X,X,O}};
-        boolean result=TicTacToeBonus.winInDiagonalFS(b,X);
+        int[][]b=new int[][]{{O,X,O,X,O},{EMPTY,X,O,X,EMPTY},{EMPTY,O,X,O,EMPTY},{EMPTY,X,O,O,X},{EMPTY,EMPTY,X,X,O}};//2D array to check if there is a win in diagonal forward
+        boolean result=TicTacToeBonus.winInDiagonalFS(b,X); // stores the actual result returned by winInDiagonal_FS
         assertTrue(result); //compares the actual result
     }
     @Test
     void winDiagonal_FS_t4()
     {
-        int[][]b=new int[][]{{O,X,O,O},{X,X,O,X},{X,O,X,O},{X,X,O,O}};
-        boolean result=TicTacToeBonus.winInDiagonalFS(b,X);
+        int[][]b=new int[][]{{O,X,O,O},{X,X,O,X},{X,O,X,O},{X,X,O,O}}; //2D array to check if there is a win in diagonal forward
+        boolean result=TicTacToeBonus.winInDiagonalFS(b,X); // stores the actual result returned by winInDiagonal_FS
         assertTrue(result); //compares the actual result
     }
     @Test
     void winDiagonal_FS_t5()
     {
-        int[][]b=new int[][]{{X,O,EMPTY,X},{O,EMPTY,O,O},{X,O,O,X},{O,O,X,O},{X,O,X,O}};
-        boolean result=TicTacToeBonus.winInDiagonalFS(b,O);
+        int[][]b=new int[][]{{X,O,EMPTY,X},{O,EMPTY,O,O},{X,O,O,X},{O,O,X,O},{X,O,X,O}}; //2D array to check if there is a win in diagonal forward
+        boolean result=TicTacToeBonus.winInDiagonalFS(b,O); // stores the actual result returned by winInDiagonal_FS
         assertTrue(result); //compares the actual result
 
     }
@@ -398,55 +398,104 @@ class TicTacToeBonusTest {
 
     void hint_t1()
     {
-        int[][] b = new int[][]{{O,X,O},{X,O,X},{EMPTY,X,X}};
-        int [] exp_res=new int[]{2,0};
-        int []result = TicTacToeBonus.hint(b, X);
-        assertArrayEquals(exp_res,result,"Hint should be (2,0)");
+        int[][] b = new int[][]{{O,X,O},{X,O,X},{EMPTY,X,X}}; //2D array in which piece is assigned
+        int [] exp_res=new int[]{2,0}; // hint value to place piece for [][]b
+        int []result = TicTacToeBonus.hint(b, X); //actual hint value returned by hint function
+        assertArrayEquals(exp_res,result,"Hint should be (2,0)"); //compares actual and expected result
 
     }
     @Test
     void hint_t2()
     {
-        int[][] b = new int[][]{{O,X,O,EMPTY},{X,EMPTY,X,O},{O,X,O,EMPTY},{O,X,EMPTY,X}};
-        int [] exp_res=new int[]{1,1};
-        int []result = TicTacToeBonus.hint(b, O);
-        assertArrayEquals(exp_res,result,"Hint should be (1,1)");
+        int[][] b = new int[][]{{O,X,O,EMPTY},{X,EMPTY,X,O},{O,X,O,EMPTY},{O,X,EMPTY,X}};//2D array in which piece is assigned
+        int [] exp_res=new int[]{1,1}; // hint value to place piece for [][]b
+        int []result = TicTacToeBonus.hint(b, O); //actual hint value returned by hint function
+        assertArrayEquals(exp_res,result,"Hint should be (1,1)"); //compares actual and expected result
 
     }
     @Test
     void hint_t3()
     {
-        int[][] b = new int[][]{{O,EMPTY,X,X},{X,O,O,EMPTY},{O,X,X,O},{EMPTY,O,EMPTY,X}};
-        int [] exp_res=new int[]{1,3};
-        int []result = TicTacToeBonus.hint(b, O);
-        assertArrayEquals(exp_res,result,"Hint should be (1,3)");
+        int[][] b = new int[][]{{O,EMPTY,X,X},{X,O,O,EMPTY},{O,X,X,O},{EMPTY,O,EMPTY,X}}; //2D array in which piece is assigned
+        int [] exp_res=new int[]{1,3};  // hint value to place piece for [][]b
+        int []result = TicTacToeBonus.hint(b, O); //actual hint value returned by hint function
+        assertArrayEquals(exp_res,result,"Hint should be (1,3)"); //compares actual and expected result
 
     }
     @Test
     void hint_t4()
     {
-        int[][] b = new int[][]{{O,EMPTY,O},{O,X,X},{X,EMPTY,O},{O,X,X}};
-        int [] exp_res=new int[]{2,1};
-        int []result = TicTacToeBonus.hint(b, X);
-        assertArrayEquals(exp_res,result,"Hint should be (2,1)");
+        int[][] b = new int[][]{{O,EMPTY,O},{O,X,X},{X,EMPTY,O},{O,X,X}}; //2D array in which piece is assigned
+        int [] exp_res=new int[]{2,1}; // hint value to place piece for [][]b
+        int []result = TicTacToeBonus.hint(b, X); //actual hint value returned by hint function
+        assertArrayEquals(exp_res,result,"Hint should be (2,1)"); //compares actual and expected result
 
     }
     @Test
     void hint_t5()
     {
-        int[][] b = new int[][]{{X,O,X},{X,X,O},{O,X,O}};
-        int [] exp_res=new int[]{-1,-1};
-        int []result = TicTacToeBonus.hint(b, X);
-        assertArrayEquals(exp_res,result,"Hint should be (-1,-1)");
+        int[][] b = new int[][]{{X,O,X},{X,X,O},{O,X,O}}; //2D array in which piece is assigned
+        int [] exp_res=new int[]{-1,-1}; // hint value to place piece for [][]b
+        int []result = TicTacToeBonus.hint(b, X);//actual hint value returned by hint function
+        assertArrayEquals(exp_res,result,"Hint should be (-1,-1)"); //compares actual and expected result
 
     }
     @Test
     void hint_t6()
     {
-        int[][] b = new int[][]{{O,X,O,X},{X,O,X,O},{EMPTY,X,X,EMPTY}};
-        int [] exp_res=new int[]{2,0};
-        int []result = TicTacToeBonus.hint(b, O);
-        assertArrayEquals(exp_res,result,"Hint should be (-1,-1)");
+        int[][] b = new int[][]{{O,X,O,X},{X,O,X,O},{EMPTY,X,X,EMPTY}}; //2D array in which piece is assigned
+        int [] exp_res=new int[]{2,0}; 
+        int []result = TicTacToeBonus.hint(b, O); //actual hint value returned by hint function
+        assertArrayEquals(exp_res,result,"Hint should be (-1,-1)");//compares actual and expected result
 
     }
+    @Test
+    void factorial_t1()
+    {
+        int n=9;  // number to find factorial for
+        BigInteger result=TicTacToeBonus.factorial(n); //actual result that factorial function returns
+        BigInteger exp_res=BigInteger.valueOf(362880);  // expected output and  convert into BigInteger type
+        assertEquals(exp_res,result,"Factorial is not 362880");  //compares actual and expected results
+    }
+    @Test
+    void factorial_t2()
+    {
+        int n=7; // number to find factorial for
+        BigInteger result=TicTacToeBonus.factorial(n); //actual result that factorial function returns
+        BigInteger exp_res=BigInteger.valueOf(5040); // expected output and convert into BigInteger type
+        assertEquals(exp_res,result,"Factorial is not 5040"); //compares actual and expected results
+    }
+    @Test
+    void factorial_t3()
+    {
+        int n=4; // number to find factorial for
+        BigInteger result=TicTacToeBonus.factorial(n);  //actual result that factorial function returns
+        BigInteger exp_res=BigInteger.valueOf(24); // expected output and convert into BigInteger type
+        assertEquals(exp_res,result,"Factorial is not 24"); //compares actual and expected results
+    }
+    @Test
+    void factorial_t4()
+    {
+        int n=5;  // number to find factorial for
+        BigInteger result=TicTacToeBonus.factorial(n); //actual result that factorial function returns
+        BigInteger exp_res=BigInteger.valueOf(120); //  expected result and convert into BigInteger type
+        assertEquals(exp_res,result,"Factorial is not 120"); //compares actual and expected results
+    }
+    @Test
+    void factorial_t5()
+    {
+        int n=3;  // number to find factorial for
+        BigInteger result=TicTacToeBonus.factorial(n); //actual result that factorial function returns
+        BigInteger exp_res=BigInteger.valueOf(6); // expected result and convert into BigInteger type
+        assertEquals(exp_res,result,"Factorial is not 6"); //compares actual and expected results
+    }
+    @Test
+    void factorial_t6()
+    {
+        int n=0;  // number to find factorial for
+        BigInteger result=TicTacToeBonus.factorial(n); //actual result that factorial function returns
+        BigInteger exp_res=BigInteger.valueOf(1); // expected result and convert into BigInteger type
+        assertEquals(exp_res,result,"Factorial is not 1"); //compares actual and expected results
+    }
+
 }
