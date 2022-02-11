@@ -181,21 +181,21 @@ public class TicTacToe extends Canvas {
      */
     public static boolean winInDiagonalBS(int[][]board,int piece)
     {
-        for(int r =0;r<rowsIn(board);r++)
+        for(int r =0;r<rowsIn(board);r++)  //parameter r to loop through every row
         {
-            for(int c=0;c<columnsIn(board);c++)
+            for(int c=0;c<columnsIn(board);c++)  //parameter c to loop through every column in a row
             {
-                if((r+2)<rowsIn(board)&& (c+2)<columnsIn(board))
+                if((r+2)<rowsIn(board)&& (c+2)<columnsIn(board)) //check if r+2 and c+2 is within the range of rows and columns
                 {
-                    if(board[r][c]==piece &&board[r+1][c+1]==piece && board[r+2][c+2]==piece)
+                    if(board[r][c]==piece &&board[r+1][c+1]==piece && board[r+2][c+2]==piece) // check if three consecutive places contains same piece
                     {
-                        return true;
+                        return true;  //return true if there is a win in diagonal backwards
                     }
                 }
 
             }
         }
-        return false;
+        return false;   //return false if there is no win in diagonal backwards
     }
 
     /**
@@ -207,13 +207,12 @@ public class TicTacToe extends Canvas {
 
     public static boolean winInDiagonalFS(int[][]board,int piece)
     {
-        for(int r=0;r<rowsIn(board);r++)
+        for(int r=0;r<rowsIn(board);r++)  //r loops through every row in a board
         {
-            for (int c = columnsIn(board) - 1; c >= 0; c--) // parameter r is used to loop through every row and c is used to loop through every column
+            for (int c = columnsIn(board) - 1; c >= 0; c--) // parameter c loops through every column in the row
             {
-                if ((r + 2) < rowsIn(board) && (c - 2) >= 0 && (c - 2) < columnsIn(board)) {
-
-
+                if ((r + 2) < rowsIn(board) && (c - 2) >= 0 && (c - 2) < columnsIn(board))  // check if row and column value is within the range
+                {
                     if (board[r][c] == piece && board[r + 1][c - 1] == piece && board[r + 2][c - 2] == piece)// check for three consecutive same pieces ina forward diagonal
                     {
                         return true; //returns true if there is a win in diagonal
@@ -221,7 +220,7 @@ public class TicTacToe extends Canvas {
                 }
             }
         }
-        return false;
+        return false;  //returns false if there is no win in a forward diagonal
 
     }
 
