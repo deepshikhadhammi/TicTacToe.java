@@ -528,6 +528,14 @@ class TicTacToeTest {
         BigInteger exp_res=BigInteger.valueOf(6); // expected result and convert into BigInteger type
         assertEquals(exp_res,result,"Factorial is not 6"); //compares actual and expected results
     }
+    @Test
+    void factorial_t6()
+    {
+        int n=0;  // number to find factorial for
+        BigInteger result=TicTacToe.factorial(n); //actual result that factorial function returns
+        BigInteger exp_res=BigInteger.valueOf(1); // expected result and convert into BigInteger type
+        assertEquals(exp_res,result,"Factorial is not 1"); //compares actual and expected results
+    }
 
 
 
