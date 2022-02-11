@@ -484,7 +484,7 @@ class TicTacToeTest {
         int[][] b = new int[][]{{X,EMPTY,X},{O,O,EMPTY},{O,EMPTY,O},{X,EMPTY,X}};  //2D array in which piece is assigned
         int [] exp_res=new int[]{1,2};   // hint value to place piece for [][]b
         int []result = TicTacToe.hint(b, O);  //actual hint value returned by hint function
-        assertArrayEquals(exp_res,result,"Hint should be (1,2)");  //actual hint value returned by hint function
+        assertArrayEquals(exp_res,result,"Hint should be (1,2)"); //actual hint value returned by hint function
 
     }
 
