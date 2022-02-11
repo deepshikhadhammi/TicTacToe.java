@@ -478,6 +478,47 @@ class TicTacToeTest {
         assertArrayEquals(exp_res,result,"Hint should be (2,0)");
 
     }
+    @Test
+    void factorial_t1()
+    {
+        int n=9;
+        BigInteger result=TicTacToe.factorial(n);
+        BigInteger exp_res=BigInteger.valueOf(362880);
+        assertEquals(exp_res,result,"Factorial is not 362880");
+    }
+    @Test
+    void factorial_t2()
+    {
+        int n=7;
+        BigInteger result=TicTacToe.factorial(n);
+        BigInteger exp_res=BigInteger.valueOf(5040);
+        assertEquals(exp_res,result,"Factorial is not 5040");
+    }
+    @Test
+    void factorial_t3()
+    {
+        int n=4;
+        BigInteger result=TicTacToe.factorial(n);
+        BigInteger exp_res=BigInteger.valueOf(24);
+        assertEquals(exp_res,result,"Factorial is not 24");
+    }
+    @Test
+    void factorial_t4()
+    {
+        int n=5;
+        BigInteger result=TicTacToe.factorial(n);
+        BigInteger exp_res=BigInteger.valueOf(120);
+        assertEquals(exp_res,result,"Factorial is not 120");
+    }
+    @Test
+    void factorial_t5()
+    {
+        int n=3;
+        BigInteger result=TicTacToe.factorial(n);
+        BigInteger exp_res=BigInteger.valueOf(6);
+        assertEquals(exp_res,result,"Factorial is not 6");
+    }
+
 
 
 }
